@@ -1,6 +1,8 @@
 from font import fonts
 import gc
 import ujson
+import time
+
 def image(file,display):
     with open(file,'r') as f:
         li=ujson.loads(f.read())
@@ -45,3 +47,105 @@ def chinese(ch_str, x_axis, y_axis,display):
                 pixel(x_axis+offset_+x, y+y_axis, int(a_[x]),display)   
                 pixel(x_axis+offset_+x+8, y+y_axis, int(b_[x]),display)   
         offset_ += 16
+
+        def anime1(text,display):
+    a=text[0:1]
+    c=text[1:2]
+    b=text[2:3]
+    d=text[3:4]
+    display.fill(0)
+    chinese(a,0,0,display)
+    time.sleep(0.1)
+    display.show()
+    display.fill(0)
+    chinese(b,16,0,display)
+    time.sleep(0.1)
+    display.show()
+    display.fill(0)
+    chinese(c,0,16,display)
+    time.sleep(0.1)
+    display.show()
+    display.fill(0)
+    chinese(d,16,16,display)
+    time.sleep(0.1)
+    display.show()
+    display.fill(0)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(0.2)
+    display.fill(0)
+    display.show()
+    time.sleep(0.1)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(0.3)
+    display.fill(0)
+    display.show()
+    time.sleep(0.1)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(1)
+    display.fill(0)
+    display.show()
+    time.sleep(0.5)
+
+def anime2(text,display):
+    a=text[0:1]
+    c=text[1:2]
+    b=text[2:3]
+    d=text[3:4]
+    display.fill(0)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(0.5)
+    display.fill(0)
+    display.show()
+    time.sleep(0.2)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(1)
+    display.fill(0)
+    display.show()
+    time.sleep(0.2)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(2)
+
+def anime3(text,display):
+    a=text[0:1]
+    c=text[1:2]
+    b=text[2:3]
+    d=text[3:4]
+    display.fill(0)
+    chinese(a,0,0,display)
+    time.sleep(0.1)
+    display.show()
+    chinese(b,16,0,display)
+    time.sleep(0.1)
+    display.show()
+    chinese(c,0,16,display)
+    time.sleep(0.1)
+    display.show()
+    chinese(d,16,16,display)
+    time.sleep(0.1)
+    display.show()
+    display.fill(0)
+    display.show()
+    time.sleep(0.2)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(1)
+    display.fill(0)
+    display.show()
+    time.sleep(0.2)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+    time.sleep(2)
