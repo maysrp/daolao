@@ -48,6 +48,16 @@ def chinese(ch_str, x_axis, y_axis,display):
                 pixel(x_axis+offset_+x+8, y+y_axis, int(b_[x]),display)   
         offset_ += 16
 
+def anime0(text,display):
+    a=text[0:1]
+    c=text[1:2]
+    b=text[2:3]
+    d=text[3:4]
+    display.fill(0)
+    chinese(a+b,0,0,display)
+    chinese(c+d,0,16,display)
+    display.show()
+
 def anime1(text,display):
     a=text[0:1]
     c=text[1:2]
@@ -133,7 +143,7 @@ def anime3(text,display):
     time.sleep(0.1)
     display.show()
     chinese(d,16,16,display)
-    time.sleep(0.1)
+    time.sleep(0.3)
     display.show()
     display.fill(0)
     display.show()
@@ -149,3 +159,35 @@ def anime3(text,display):
     chinese(c+d,0,16,display)
     display.show()
     time.sleep(2)
+
+def flx(lx,display,r='r'):
+    if r=="l":
+        r="<"
+    else:
+        r=">"
+    for i in range(len(lx)-1):
+        display.fill(0)
+        chinese(lx[i:i+2],0,0,display)
+        display.text(r+r+r+" ",96,0,1)
+        display.text('----',64,0,1)
+        display.show()
+        time.sleep(0.1)
+        if i<len(lx)-2:
+            display.fill(0)
+            chinese(lx[i:i+3],-4,0,display)
+            display.text(" "+r+r+r,96,0,1)
+            display.text('----',64,0,1)
+            display.show()
+            time.sleep(0.1)
+            display.fill(0)
+            chinese(lx[i:i+3],-8,0,display)
+            display.text(r+" "+r+r,96,0,1)
+            display.text('----',64,0,1)
+            display.show()
+            time.sleep(0.1)
+            display.fill(0)
+            chinese(lx[i:i+3],-12,0,display)
+            display.text(r+r+" "+r,96,0,1)
+            display.text('----',64,0,1)
+            display.show()
+            time.sleep(0.1)
