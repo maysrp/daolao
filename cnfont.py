@@ -48,7 +48,7 @@ def chinese(ch_str, x_axis, y_axis,display):
                 pixel(x_axis+offset_+x+8, y+y_axis, int(b_[x]),display)   
         offset_ += 16
 
-        def anime1(text,display):
+def anime1(text,display):
     a=text[0:1]
     c=text[1:2]
     b=text[2:3]
