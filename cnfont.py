@@ -1,4 +1,16 @@
 from font import fonts
+import gc
+import ujson
+def image(file,display):
+    with open(file,'r') as f:
+        li=ujson.loads(f.read())
+    display.fill(0)
+    for i in li:
+        x=32*(i[1]//8)+i[0]
+        y=i[1]%8
+        display.pixel(x,y,1)
+    display.show()
+    
 def pixel(x,y,fill,display):
     # print(x,y)
     if x<32 and y<32:
